@@ -1,0 +1,97 @@
+<html>
+<head>
+
+
+</head>
+
+<body>
+  <h2>Digite números positivos</h2>
+  <button onclick="coletarNumeros()">Iniciar</button>
+
+  <script>
+    function coletarNumeros() {
+      let numero;
+      let soma = 0;
+      let contador = 0;
+
+      do {
+        numero = parseFloat(prompt("Digite um número positivo"));
+
+        if (numero > 0) {
+          soma += numero; // soma os positivos
+          contador++;     // conta quantos foram digitados
+        }
+      } while (numero > 0);
+
+      if (contador > 0) {
+        let media = soma / contador;
+        alert(
+          "Quantidade de números digitados: " + contador +
+          "\nSoma dos números positivos: " + soma +
+          "\nMédia: " + media.toFixed(2)
+        );
+      } else {
+        alert("Nenhum número positivo foi digitado.");
+      }
+    }
+  </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+}
+/*
+let quantidade = 0;
+let soma = 0;
+let numero;
+
+// Loop que continua até que o usuário digite um número negativo ou zero
+do {
+  const entrada = prompt("Digite um número positivo (ou zero/negativo para sair):");
+  numero = parseFloat(entrada);
+
+  if (numero > 0) {
+    soma += numero;
+    quantidade++;
+  }
+} while (numero > 0);
+
+// Calcula a média
+let media = quantidade > 0 ? soma / quantidade : 0;
+
+// Exibe os resultados
+alert(`Você digitou {quantidade} número(s).
+Soma dos números positivos: {soma}
+Média: {media.toFixed(2)}`);
+*/
+</script>
+
+   
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

@@ -6,17 +6,13 @@
 
 <body>
 
-<img id="lampada" src="pic_bulboff" width="100" height="180">
-<button onclick="alternarImagem()">Ligar/Desligar</button>
-<script>
-function alternarImagem() {
-  var imagem = document.getElementById("pic_bulboff");
-  if (imagem.src.match("pic_bulboff")) {
-    imagem.src = "pic_bulbon";
-  } else {
-    imagem.src = "pic_bulbon";}
-}
-</script>
+
+
+<img id="lampada" src="pic_bulboff.gif" style="width:100px; height:180px;">
+<button onclick="document.getElementById('lampada').src = 'pic_bulbon.gif'">Ligar Luz</button>
+<button onclick="document.getElementById('lampada').src='pic_bulboff.gif'">Apagar Luz</button>
+
+
 
   
 

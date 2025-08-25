@@ -127,7 +127,7 @@ ul#lista_usuarios li:hover {
 
 <body>
     
-    <h2>Cadastro de Alunos</h2>
+    <h2>Cadastro de Usuários</h2>
     
     <div class="form-container">
         <div class="input-group">
@@ -188,9 +188,19 @@ ul#lista_usuarios li:hover {
         item.onclick = () =>{
             indiceSelecionado = index;
             document.getElementById("info").innerHTML = `usuário selecionado:<b>${usuario.nome}</b>`;
+            listar();
         };
+
+        if (indiceSelecionado === index){
+            item.classList.add("selecionado");
+
+        }
     
+
+
+
     lista.appendChild(item);
+
     });
     
     }
@@ -221,6 +231,16 @@ ul#lista_usuarios li:hover {
     let telefone = document.getElementById('telefone').value.trim();
     let email = document.getElementById('email').value.trim();
     
+    let usuarioAtual = usuarios[indiceSelecionado];
+
+    if ( 
+        usuarioAtual.nome === nome &&
+        usuarioAtual.telefone === telefone &&
+        usuarioAtual.email === email
+    ){ alert("Nenhuma alteração detectada");return;
+
+    }
+
     usuarios[indiceSelecionado] = {nome,telefone, email};
     limparCampos();
     indiceSelecionado = null;

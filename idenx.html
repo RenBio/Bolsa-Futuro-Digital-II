@@ -1,40 +1,41 @@
 <html>
 <head>
 <title>Minha página</title>
-
-
+<meta charset="UTF-8">
 <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body>
-    <h1> Minha página</h1>
-    
-    <p> Paragrafo </p>
+    <div class="container">
 
-    <p> Visite o site da Globo</p>
-
-    <div class = "table-centered">
         
-        <table class ="table-centered"></table> table border="1">
-            <tr>
-        
-                <th>Primeiro</th>
-                <th>Segundo<th>
-                    
-                </tr>
-                
-            </table>
+            <h1> Minha página</h1>
+            
+            <p> Paragrafo </p>
+            <p> Visite o site da Globo</p>
 
-        </div>
+         
+            <div class = "table-centered">
+                        <table class ="table-centered"></table> table border="1">
+                    <tr>
+                        <th>Primeiro</th>
+                        <th>Segundo<th>
+                    </tr>
+                    <tr>
+                    <td>exemplo 1<td>
+                    <td>exemplo 2<td>
+                    </td>
+                    </table>
+                </div>
+    </div>
+
         
         <script>
             
             function myfunction(){
-            var x = document.getElementByClassName("city");
-            for (var i=0; i < x.lenght;i++) {
-                x[i].style.display ="nome";
+            var x = document.getElementsByClassName("city");
+            for (var i = 0; i < x.lenght; i++) {
+                x[i].style.display = "nome";
             }
         
         }
@@ -45,17 +46,9 @@
 
         </script>
 
-<div class="paragraph"
-        
-        
-
-    
-
-</div>
-
 <nav>
 <ul>
-<href="#" onclick="chamarDiv('tabelas')"
+<href="#" onclick="chamarDiv('tabelas')">mostrar tabelas</href>
 
 </ul>
 

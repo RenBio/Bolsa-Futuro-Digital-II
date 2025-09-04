@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+body{
+   font-family: Arial, Helvetica, sans-serif; 
+}
+h1{
+    font-size: 24px;
+}
+input{
+    margin-bottom: 10px;
+}
+resultado{
+    margin-top: 20px;
+}
+
+
+</style>
+
+
+<body>
+<h1> Manipulação de Strings</h1>
+
+<p><p>
+
+<label> Palavra1:
+    <input type = "text" id = "palavra1" placeholder="none">
+</label>
+<label> Palavra2:
+    <input type = "text" id = "palavra2" placeholder="none">
+</label>
+
+<button onclick = "analisarPalavras()" >Analisar Palavras</button>
+
+<div class="resultado" id = "resultado"></div>
+
+    <script>
+    
+    function analisarPalavras(){
+    console.log("cheguei")
+    let palavra1 = document.getElementById('palavra1').value;
+    let palavra2 = document.getElementById('palavra2').value;
+    
+    let tamanho = palavra1.length;
+    let concatenada = palavra1.concat(" ", palavra2);
+    let slice = palavra1.slice(0,4);
+    let index = palavra1.indexOf("a");
+    let maiuscula = palavra1.toUpperCase();
+    let minuscula = palavra1.toLowerCase();
+    let replace = palavra1.replace("a","@");
+    let at2 = palavra1.at(2);
+    
+    
+    
+        let invertida = ""
+        for (let i = palavra1.length -1; i >= 0; i--) {
+            invertida += palavra1[i];
+        }  
+    
+
+       document.getElementById('resultado').innerHTML =
+        
+         `
+        
+        <p> + Tamanho +${tamanho}</p>
+        <p> + Concat + ${concatenada}</p>
+        <p> + Slice + ${slice}</p>
+        <p> + Index + ${index}</p>
+        <p> + Maiuscula + ${maiuscula}</p>
+        <p> + Minuscula + ${minuscula}</p>
+        <p> + Replace + ${replace}</p>
+        <p> + AT2 + ${at2}</p>
+        
+    `};
+    </script>
+</body>
+</html>

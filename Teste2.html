@@ -29,21 +29,24 @@
     </main>
 
 
-<button class = "Ordenar por" onclick = "filtrarProdutos('preco')">Ordenar por preço</button>
-<button class = "Ordenar por" onclick = "filtrarProdutos('data')">Ordenar por data</button>
-<button class="Ordenar por" onclick="filtrarProdutos('vendas')">Odenar por mais vendidos</button>
+
 
 
 <script>
 /* Lista de produtos*/    
 let produtos = [
-    {id:1, nome: "Camisa",data:"25-04-2025", preço: 200,vendas:55},
-    {id:2, nome: "Tênis",data:"12-09-2024",preço:120,vendas:67},
-    {id:3, nome: "livro",data:"01-11-2024", preço: 80,vendas: 24},
+    {id:1, nome: "Camisa", preço: 200,},
+    {id:2, nome: "Tênis",preço:120,},
+    {id:3, nome: "livro", preço: 80,},
 
 ]
 // carrinho vazio
 let carrinho = [];
+
+function formatarPreco(value){
+return value.toLocaleString("pt-br", {style:currency, currency: "BRL"});
+}
+
 
 let listaProdutos = document.getElementById("lista-produtos");
 
@@ -102,7 +105,7 @@ if (filtro === "preco"){
 }
 
 function ordenarPorPreco(lista,ordem){
-for (var i = 0; i <lista)
+for (var i = 0; i <lista);
 }
 
 carrinho.forEach((item) => {

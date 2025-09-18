@@ -132,6 +132,46 @@ let totalElemento = document.getElementById('total');
 // limpa lista do carrinho
 listaCarrinho.innerHTML = "";
 
+// Se o carrinho estiver vazio, mostra a mensagem
+if (carrinho.length === 0) {
+    listaCarrinho.innerHTML ='<p class="vazio">Carrinho Vazio</p>';
+} else {
+    for (let i = 0; i < carrinho.length; i++){
+        let item = carrinho [i];
+        let precoTotal = item.preco * item.quantidade;
+    }
+}
+
+listaCarrinho.innerHTML += '<li>' + item.nome + ' (x' + item.quantidade +') - ' + formatarPreco(precoTotal) + '<br>' +
+    '<button onclick="adicionarAoCarrinhoPorNome(\''+ item.nome + '\')">+</button>' +
+    '<button onclick="removerDoCarrinho(\'' + item.nome + '\')">-</button>' + '</li>';
+
+// Calcula o total do carrinho
+
+let total = 0;
+for (let i = 0; i < carrinho.length;i++){
+    total += carrinho[i].preco * carrinho[i].quantidade;
+}
+
+// Atualizar o valor total do carrinho
+
+totalElemento.textContent = formatarPreco(total);
+}
+
+//Função auxiliar para adicionar o produto pelo nome
+function adicionarAoCarrinhoPorNome(nomeProduto){
+    for (let i = 0; i < produto.length; i++){
+        if (produtos[i].nome === nomeProduto){
+            adicionarAoCarrinho(i);break;
+        }
+    }
+}
+
+// Inicializar pagina
+
+mostrarProdutos();
+atualizarCarrinho();
+
 </script>
 
 </body>

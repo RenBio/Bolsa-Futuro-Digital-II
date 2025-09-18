@@ -88,7 +88,7 @@ for (let i = 0; i< carrinho.length; i++){
 if (produtoNoCarrinho){// Se já esta, aumenta a quantidade
     produtoNoCarrinho.quantidade++;
 } else{//
-    carrinho.push({
+    carrinho.push({//Se não esta, adiciona 1
         nome: produto.nome,
         preco:produto.preco,
         quantidade:1
@@ -97,7 +97,17 @@ if (produtoNoCarrinho){// Se já esta, aumenta a quantidade
 //Atualizar o carrinho
 atualizarCarrinho();
 
+/*Função para remover item do carrinho*/
 
+function removerDoCarrinho(nomeProduto){ // Encontra produto no carrinho
+    let produtoNoCarrinho = null;
+
+    for (let i = 0; i < carrinho.length; i++){
+        if (carrinho[i]. nome === nomeProduto) {produtoNoCarrinho = carrinho[i]; break
+
+        }
+    }
+}
 
 
 if (carrinho.length ===0){

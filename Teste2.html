@@ -63,7 +63,7 @@ let divCarrinho = document.getElementById("carrinho");
 function RenderizarProdutos(){
     for (var i = 0; i< produtos.length; i++){
         listaProdutos.innerHTML += '<div class = "produto">' + '<strong>' + produtos[i].nome +'</strong><br>' + formatarPreco(produtos[i].preco) + '<br>'
-             + '<button onclick="adicionarAoCarrinho"('+i+')>Adicionar</button>' + '</div>'
+             + '<button onclick ="adicionarAoCarrinho"('+i+')>Adicionar</button>' + '</div>'
         }
     
     }
@@ -79,10 +79,24 @@ function adicionarAoCarrinho(indiceProduto){
 // Verifica se o produto já esta no carrinho
 let produtoNoCarrinho = null;
 
+for (let i = 0; i< carrinho.length; i++){
+    if (carrinho[i].nome === produto.nome){
+        produtoNoCarrinho = carrinho[i]; break; // Parar quando encontrar
+    }
+} 
 
+if (produtoNoCarrinho){// Se já esta, aumenta a quantidade
+    produtoNoCarrinho.quantidade++;
+} else{//
+    carrinho.push({
+        nome: produto.nome,
+        preco:produto.preco,
+        quantidade:1
+    });
+}
 //Atualizar o carrinho
-function mostrarCarrinho(){
-    divCarrinho.innerHTML =""; // limpa o carrinho antes de atualizar.
+atualizarCarrinho();
+
 
 
 

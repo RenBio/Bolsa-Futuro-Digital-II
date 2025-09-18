@@ -43,27 +43,33 @@ let produtos = [
 // carrinho vazio
 let carrinho = [];
 
+/*Função para converter os valores*/
+
 function formatarPreco(value){
 return value.toLocaleString("pt-br", {style:currency, currency: "BRL"});
 }
 
+// Função para mostrar os produtos na página
+function mostrarProdutos(){
+    let listaProdutos = document.getElementById("lista-Produtos");
+listaProdutos.innerHTML = "";
+}
 
-let listaProdutos = document.getElementById("lista-produtos");
 
 let divCarrinho = document.getElementById("carrinho");
 
 /*função para renderizar os produtos*/
 
 function RenderizarProdutos(){
-    listaProdutos.innerHTML = ''; // Limpa a lista antes de renderizar
-    produtos.forEach(produto => {
-    const div = document.createElement("div");
-    div.classList.add("produto");
-
-    div.innerHTML =`
+    for (var i = 0; i< produtos.length; i++){
+        listaProdutos.innerHTML += '<div class = "produto">' + '<strong>' + produtos[i].nome +'</strong><br>' + formatarPreco(produtos[i].preco) + '<br>'
+             + '<button onclick="adicionarAoCarrinho"('+i+')>Adicionar</button>' + '</div>'
+        }
     
     <p> ${produto.nome} - Lançado em${produto.data} - R$ ${produto.preco} - Mais vendidos${produto.vendas}</p>
     <button onclick="AdicionarAoCarrinho(${produto.id})">Adicionar ao carrinho</button>
+
+}
     `;
     listaProdutos.appendChild(div); 
     });
@@ -90,32 +96,9 @@ if (carrinho.length ===0){
     
 }
 
-// Filtrar produtos
-
-function filtrarProdutos() {
-let filtro = document.getElementById('filtro').value;
-
-if (filtro === "preco"){
-    produtos.sort((a,b) => a.preco - b.preco); // ordenar por preço
-} else if (filtro === "vendas"){
-    produtos.sort((a,b) => a.vendas - b.vendas); // Ordena por mais vendidos
-    } else if (filtro === "data"){
-        produtos.sort((a,b) => a.data - b.data); // Ordena por data
-    }
-}
-
-function ordenarPorPreco(lista,ordem){
-for (var i = 0; i <lista);
-}
-
-carrinho.forEach((item) => {
-    const itemDiv = document.createElement("p");
-    itemDiv.textContent = ` ${item.nome} - R$ ${item.preco}`;
-    divCarrinho.appendChild(itemDiv);
 
 
-});
-}
+
 </script>
 
 </body>

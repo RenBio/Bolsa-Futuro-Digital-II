@@ -66,25 +66,20 @@ function RenderizarProdutos(){
              + '<button onclick="adicionarAoCarrinho"('+i+')>Adicionar</button>' + '</div>'
         }
     
-    <p> ${produto.nome} - Lançado em${produto.data} - R$ ${produto.preco} - Mais vendidos${produto.vendas}</p>
-    <button onclick="AdicionarAoCarrinho(${produto.id})">Adicionar ao carrinho</button>
-
-}
-    `;
-    listaProdutos.appendChild(div); 
-    });
-    RenderizarProdutos(); 
-}
-RenderizarProdutos();
+    }
 
 
 // Função para adicionar item ao carrinho.
-function adicionarAoCarrinho(){
-    let produto = produtos.find(p=> p.id === id);
+function adicionarAoCarrinho(indiceProduto){
+    let produto = produtos = [indiceProduto];
     carrinho.push(produto);
     atualizarCarrinho();
 
 }
+// Verifica se o produto já esta no carrinho
+let produtoNoCarrinho = null;
+
+
 //Atualizar o carrinho
 function mostrarCarrinho(){
     divCarrinho.innerHTML =""; // limpa o carrinho antes de atualizar.

@@ -109,14 +109,28 @@ function removerDoCarrinho(nomeProduto){ // Encontra produto no carrinho
     }
 }
 
+if (produtoNoCarrinho){ // Cria um novo carrinho sem o produto
+    let novoCarrinho = [];
+}
 
-if (carrinho.length ===0){
-    divCarrinho.innerHTML = "<p>o carrinho está vazio</p>"; return;
+for (let i = 0; i < carrinho.length; i++){
+    if (carrinho[i].nome ! == nomeProduto) {
+        novoCarrinho.push(carrinho[i]);
+    }
+carrinho = novoCarrinho
     
 }
 
+// Atualiza a exibição do carrinho
+atualizarCarrinho();
 
+/* Função para atualizar a exibição do carrinho*/
 
+let listaCarrinho = document.getElementById('listaCarrinho');
+let totalElemento = document.getElementById('total');
+
+// limpa lista do carrinho
+listaCarrinho.innerHTML = "";
 
 </script>
 

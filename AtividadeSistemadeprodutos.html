@@ -12,12 +12,28 @@
 
     <select id="categoria" on change="aplicarFiltros()">
         <option value="todos">Todas as categorias</option>
-        <option value="Roupas">Roupas</option>
-        <option value="Calçados">Calçados</option>
-        <option value="Eletrônicos">Eletrônicos</option>
-        <option value="Livros">Livros</option>
-        <option value="Acessórios">Acessórios</option>
+        <option value="roupas">Roupas</option>
+        <option value="calçados">Calçados</option>
+        <option value="eletrônicos">Eletrônicos</option>
+        <option value="livros">Livros</option>
+        <option value="acessórios">Acessórios</option>
     </select>
+
+    <select id="ordenar" onchange="aplicarFiltros()">
+        <option value="nenhum">Ordenar por...</option>
+        <option value="nome">Nome (A-Z)</option>
+        <option value="nome-desc">Nome (Z-A)</option>
+        <option value="preco">Preço (Menor-Maior)</option>
+        <option value="preco-desc">Preço (Maior-Menor)</option>
+    </select>
+
+    
+
+
+
+
+
+        <option value="disponível">Disponível</option>
 
 
 </body>

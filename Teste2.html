@@ -19,7 +19,7 @@
 
     <div>
 
-    <!--Carrinho-->>
+    <!--Carrinho-->
     <div class="carrinho">
     <h2>Carrinho</h2>
     <ul id="listaCarrinho"></ul>
@@ -35,9 +35,9 @@
 <script>
 /* Lista de produtos*/    
 let produtos = [
-    {id:1, nome: "Camisa", preço: 200,},
-    {id:2, nome: "Tênis",preço:120,},
-    {id:3, nome: "livro", preço: 80,},
+    {nome: "Camisa", preço: 200,},
+    {nome: "Tênis",preço:120,},
+    {nome: "livro", preço: 80,},
 
 ]
 // carrinho vazio
@@ -52,21 +52,24 @@ return value.toLocaleString("pt-br", {style:currency, currency: "BRL"});
 // Função para mostrar os produtos na página
 function mostrarProdutos(){
     let listaProdutos = document.getElementById("lista-Produtos");
-listaProdutos.innerHTML = "";
-}
+    listaProdutos.innerHTML = "";
+    for (let i = 0; i < produtos.length; i++){
+        listaProdutos.innerHTML += '<div class ="produto">' +
+            '<strong>' + produtos[i].nome +'</strong><br>' +
+            formatarPreco(produtos[i].preço) + '<br>' + 
+            '<button onclick ="adicionarAoCarrinho"('+i+')>Adicionar</button>' +
+            '</div>';
+        }
+    
+    }
+
 
 
 let divCarrinho = document.getElementById("carrinho");
 
 /*função para renderizar os produtos*/
 
-function RenderizarProdutos(){
-    for (var i = 0; i< produtos.length; i++){
-        listaProdutos.innerHTML += '<div class = "produto">' + '<strong>' + produtos[i].nome +'</strong><br>' + formatarPreco(produtos[i].preco) + '<br>'
-             + '<button onclick ="adicionarAoCarrinho"('+i+')>Adicionar</button>' + '</div>'
-        }
-    
-    }
+
 
 
 // Função para adicionar item ao carrinho.
@@ -103,23 +106,17 @@ function removerDoCarrinho(nomeProduto){ // Encontra produto no carrinho
     let produtoNoCarrinho = null;
 
     for (let i = 0; i < carrinho.length; i++){
-        if (carrinho[i]. nome === nomeProduto) {produtoNoCarrinho = carrinho[i]; break
-
+        if (carrinho[i].nome === nomeProduto) {carrinho[i].quantidade--;
+            if (carrinho[i].quantidade <= 0){
+                carrinho.splice(i,1);
+            } 
+            break;
         }
     }
+    atualizarCarrinho();
 }
 
-if (produtoNoCarrinho){ // Cria um novo carrinho sem o produto
-    let novoCarrinho = [];
-}
 
-for (let i = 0; i < carrinho.length; i++){
-    if (carrinho[i].nome ! == nomeProduto) {
-        novoCarrinho.push(carrinho[i]);
-    }
-carrinho = novoCarrinho
-    
-}
 
 // Atualiza a exibição do carrinho
 atualizarCarrinho();
@@ -156,7 +153,7 @@ for (let i = 0; i < carrinho.length;i++){
 // Atualizar o valor total do carrinho
 
 totalElemento.textContent = formatarPreco(total);
-}
+
 
 //Função auxiliar para adicionar o produto pelo nome
 function adicionarAoCarrinhoPorNome(nomeProduto){

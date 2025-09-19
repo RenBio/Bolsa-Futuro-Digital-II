@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Sistema de Produtos</title>
+</head>
+<body>
+<h1>Sistema de Produtos</h1>
+<div class="controles">
+    <input type="text" id="busca" placeholder="Buscar produto..." onkeyup="aplicarFiltros()">
+
+    <select id="categoria" on change="aplicarFiltros()">
+        <option value="todos">Todas as categorias</option>
+        <option value="Roupas">Roupas</option>
+        <option value="Calçados">Calçados</option>
+        <option value="Eletrônicos">Eletrônicos</option>
+        <option value="Livros">Livros</option>
+        <option value="Acessórios">Acessórios</option>
+    </select>
+
+
+</body>
+</html>

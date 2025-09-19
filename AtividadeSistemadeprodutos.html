@@ -27,14 +27,23 @@
         <option value="preco-desc">Preço (Maior-Menor)</option>
     </select>
 
-    
-
-
-
-
-
+    <select id="estoque" onchange="aplicarFiltros()">
+        <option value="todos">Todos em Estoque</option>
         <option value="disponível">Disponível</option>
+        <option value="baixo">Estoque baixo</option>
+        <option value="indisponivel">Indisponível</option>
+    </select>
+</div>
 
+<div class="filtros-avancados">
+    <label>Faixa de preço: </label>
+    <input type="number" id="preco-min" placeholder="Mínimo" onchange="aplicarFiltros()">
+    <span> até </span>
+    <input type="number" id="preco-max" placeholder="Máximo" onchange="aplicarFiltros()">
 
+    <label style="margin-left: 15px;">
+    <input type="checkbox" id="destaque" onchange="aplicarFiltros()">
+    somenteDestaques
+    </label>
 </body>
 </html>

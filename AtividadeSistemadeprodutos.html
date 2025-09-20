@@ -66,12 +66,50 @@
         {nome: "Mouse Gamer", preco: 150, categoria: "eletrônicos", estoque: 10, destaque: true},
 
     ];
-
+    // Função formatar preço
     function formatarPreco(value) {
         return "R$" + value.toFixed(2).replace(".", ".");
     }
+    // Função mostrar produtos
+    function mostrarProdutos(lista) {
+        let area = document.getElementById("listaProdutos");
+        ara.innerHTML = "";
+    }
 
+    //Atualizar contador
+    document.getElementById("total-produtos").textContent = lista.length;
 
+    if (lista.length === 0) {
+    area.innerHTML = "<p style='text-align:center;'>Nenhum produto encontrado com esses filtros.</p>";
+    return;
+    }
+
+    // Exibir produtos filtrados
+
+    lista.forEach(function(produto) {
+        let estoqueText = "";
+        let estoqueClass = "";
+
+        if (produto.estoque === 0) {
+            estoqueText = "Indisponível";
+            estoqueClass = "";
+        } else if (produto.estoque < 5) {
+            estoqueText = "Apenas" + produto.estoque + " em estoque";
+            estoqueClass = "baixo";
+        } else{
+            estoqueText = "Em estoque";
+            estoqueClass = "Disponível"
+        }
+
+        area.innerHTML += `
+        <div class="produto">
+        <strong>${produto.nome}</strong><br>
+        <div class="preco">${formatarPreco(produto.preco)}</div>
+        <div class="categoria">${produto.categoria}</div>
+        <div class="estoque>${estoqueClass}">${estoqueText}</div>
+        ${produto.destque ? '<div class= "destaque"> Destaque</div>' : ''}
+       </div>`;
+    });
 
 
 </script>

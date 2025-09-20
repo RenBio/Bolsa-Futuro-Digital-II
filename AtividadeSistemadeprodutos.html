@@ -130,11 +130,47 @@ for (let i = 0; i < produtos.length; i++) {
 }
 
 // Verifica os filtros
+
 let atendeBusca = textoBusca === "" || nomeProduto.includes(textoBusca);
 let atendeCategoria = categoriaSelecionada === "todos" || produto.categoria === categoriaSelecionada;
 let atendePrecoMin = produto.preco >= precoMin;
 let atendePrecoMax = produto.preco <= precoMax;
 let atendeDestaque = !somenteDestaque || produto.destaque;
+
+// Filtro Estoque
+
+let atendeEstoque = true;
+if (filtroEstoque === "disponivel") {
+    atendeEstoque = produto.estoque > 0;
+} else if (filtroEstoque === "baixo") {
+    atendeEstoque = produto.estoque > 0 && produto.estoque < 5;
+} else if (filtroEstoque === "indisponivel") {
+    atendeEstoque = produto.estoque === 0;
+
+
+// Se passar em todos os filtros, adiciona à lista
+
+// Ordena os produtos caso necessário
+if (tipoOrdenacao === "nome") {
+    ordenarPorNome(produtosFiltrados, "crescente");
+} // ordena por nome (A-Z)
+
+else if (tipoOrdenacao === "nome-desc") {
+    ordenarPorNome(produtosFiltrados, "decrescente");
+} // ordena por nome (Z-A)
+
+else if (tipoOrdenacao === "preco") {
+    ordenarPorPreco(produtosFiltrados, "crescente");
+} // ordena por preço em ordem crescente
+
+else if (tipoOrdenacao === "preco-desc") {
+    ordenarPorPreco(produtosFiltrados, "decrescente");
+} // ordena por preço em ordem decrescente
+
+// Mostra os produtos filtrados
+
+mostrarProdutos(produtosFiltrados);
+}
 </script>
 </body>
 </html>

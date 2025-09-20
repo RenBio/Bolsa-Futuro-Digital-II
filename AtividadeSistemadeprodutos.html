@@ -58,11 +58,18 @@
     let produtos =[
         {nome: "camisa Polo", preco: 50, categoria: "roupas", estoque: 20, destaque: true},
         {nome: "Tênis Esportivo", preco: 200, categoria: "calçados", estoque: 15, destaque: true},
-        {nome:"Livro de Programação", preco: 40, categoria: "livros", estoque: 8, destaque: false},
-        {nome:"Fone de Ouvido", preco: 120, categoria: "eletrônicos", estoque: 3, destaque: true},
-        {nome:"Boné", preco: 35, categoria: "acessórios", estoque: 0, destaque: false }
+        {nome: "Livro de Programação", preco: 40, categoria: "livros", estoque: 8, destaque: false},
+        {nome: "Fone de Ouvido", preco: 120, categoria: "eletrônicos", estoque: 3, destaque: true},
+        {nome: "Boné", preco: 35, categoria: "acessórios", estoque: 0, destaque: false },
+        {nome: "Calça Jeans", preco: 90, categoria:"roupas", estoque: 12, destaque: false},
+        {nome: "Sandália", preco: 70, categoria: "calçados", estoque: 5, destaque: false},
+        {nome: "Mouse Gamer", preco: 150, categoria: "eletrônicos", estoque: 10, destaque: true},
 
-    ]
+    ];
+
+    function formatarPreco(value) {
+        return "R$" + value.toFixed(2).replace(".", ".");
+    }
 
 
 

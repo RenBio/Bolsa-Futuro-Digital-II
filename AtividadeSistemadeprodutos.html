@@ -45,5 +45,28 @@
     <input type="checkbox" id="destaque" onchange="aplicarFiltros()">
     somenteDestaques
     </label>
+</div>
+
+<div class="info-pagina">
+    <span id="total-produtos">5</span> produtos encontrados
+    <button onclick="limparFiltros()">Limpar Filtros</button>
+</div>
+
+<div class="produtos" id="lista-Produtos"></div>
+
+<script>
+    let produtos =[
+        {nome: "camisa Polo", preco: 50, categoria: "roupas", estoque: 20, destaque: true},
+        {nome: "Tênis Esportivo", preco: 200, categoria: "calçados", estoque: 15, destaque: true},
+        {nome:"Livro de Programação", preco: 40, categoria: "livros", estoque: 8, destaque: false},
+        {nome:"Fone de Ouvido", preco: 120, categoria: "eletrônicos", estoque: 3, destaque: true},
+        {nome:"Boné", preco: 35, categoria: "acessórios", estoque: 0, destaque: false }
+
+    ]
+
+
+
+
+</script>
 </body>
 </html>

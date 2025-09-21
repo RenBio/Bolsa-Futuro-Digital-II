@@ -204,7 +204,7 @@ display: inline-block;
             <strong>${produto.nome}</strong><br>
             <div class="preco">${formatarPreco(produto.preco)}</div>
             <div class="categoria">${produto.categoria}</div>
-            <div class="estoque>${estoqueClass}">${estoqueText}</div>
+            <div class="estoque ${estoqueClass}">${estoqueText}</div>
             ${produto.destaque ? '<div class= "destaque">⭐ Destaque</div>' : ''}
            </div>
            
@@ -215,7 +215,7 @@ display: inline-block;
 
 //Função para aplicar os filtros
 
-function aplicarFiltros(){
+function aplicarFiltros() {
     let textoBusca = document.getElementById("busca").value.toLowerCase();
     let categoriaSelecionada = document.getElementById("categoria").value;
     let tipoOrdenacao = document.getElementById('ordenar').value;
@@ -258,7 +258,7 @@ if (atendeBusca && atendeCategoria && atendePrecoMin && atendePrecoMax && atende
     }
 }
 
-// Ordena os produtos caso necessário
+// Filtro Ordenação
 if (tipoOrdenacao === "nome") {
     ordenarPorNome(produtosFiltrados, "crescente");
 } // ordena por nome (A-Z)
@@ -297,6 +297,28 @@ function ordenarPorNome(lista, ordem) {
                 let temp = lista[i];
                 lista[i] = lista[j];
                 lista[j] = temp;
+            }
+        }
+    }
+}
+
+// Função ordenar por preço
+
+function ordenarPorPreco(lista,ordem) {
+    for (let i = 0; i < lista.length -1; i++) {
+        for (let j = i + 1; j < lista.length; j++) {
+            let deveTrocar = false;
+
+            if (ordem === "crescente") {
+                deveTrocar = lista[i].preco > lista[j].preco;
+            } else {
+                deveTrocar = lista[i].preco < lista[j].preco;
+            }
+        if (deveTrocar) {
+            let temp = lista[i];
+            lista[i] = lista[j];
+            lista[j] = temp;
+
             }
         }
     }

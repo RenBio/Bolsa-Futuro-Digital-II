@@ -1,0 +1,135 @@
+/* Fontes e cores base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4fdf6;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Títulos */
+h1, h2 {
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Blocos de produtos e carrinho */
+.produtos, .carrinho {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #d0e8da;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 300px;
+  transition: transform 0.2s ease;
+}
+
+.produtos:hover, .carrinho:hover {
+  transform: translateY(-2px);
+}
+
+/* Grid de produtos */
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* Produto e itens do carrinho */
+.produto, li {
+  border: 1px solid #d0e8da;
+  background: #f9fefb;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Botões */
+button {
+  padding: 6px 12px;
+  margin: 4px;
+  border: none;
+  border-radius: 5px;
+  background: #2ecc71;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #27ae60;
+}
+
+/* Total do carrinho */
+.total {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: right;
+  font-size: 16px;
+}
+
+/* Carrinho vazio */
+.vazio {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.produto .preco {
+  font-weight: bold;
+  color: #333;
+  margin: 8px 0;
+}
+
+.produto .categoria {
+font-size: 12px;
+color: #f0f0f0;
+background: #f4fdf6;
+padding: 3px 8px;
+border-radius: 12px;
+display: inline-block;
+}
+
+.produto .estoque {
+  font-size: 14px;
+  color: #388e3c;
+  margin: 5px 0;
+}
+
+.produto .destaque {
+  color: #ff5722;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.filtros-avancados {
+  margin: 15px 0;
+  padding: 10px;
+  background: #f0f8ff;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.info-pagina {
+  text-align: center;
+  margin: 15px 0;
+  color: #666;
+}

@@ -1,0 +1,17 @@
+
+$tamanho_letra: 1.5em;
+$cor_letra: green;
+
+.texto1{
+    font-size: $tamanho_letra;
+    color: $cor_letra;
+}
+.texto2{
+    font-size: 1.2em;
+    color: rgb(75, 231, 192);
+}
+.texto3{
+    font-size: 1.2em;
+    color: red;
+}
+

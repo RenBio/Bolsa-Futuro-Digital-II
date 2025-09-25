@@ -1,17 +1,58 @@
+/*variáveis*/
+$cor-principal: #3498db;
+$cor-secundaria: #2ecc71;
+$fonte-padrao: 16px;
 
-$tamanho_letra: 1.5em;
-$cor_letra: green;
-
-.texto1{
-    font-size: $tamanho_letra;
-    color: $cor_letra;
-}
-.texto2{
-    font-size: 1.2em;
-    color: rgb(75, 231, 192);
-}
-.texto3{
-    font-size: 1.2em;
-    color: red;
+// Mixin para sombra e borda
+@mixin caixa-estilizada($raio, $sombra) {
+  border-radius: $raio;
+  box-shadow: 0 2px 5px $sombra;
 }
 
+// Estilo para elementos clicaveis
+%clicavel {
+  font-size: $fonte-padrao;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: all 0.3 ease;
+}
+
+// Estilos do menu
+.menu {
+  background-color: $cor-principal;
+  padding: 10px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li {
+      a {
+        @extend %clicavel;
+        color: antiquewhite;
+
+        &:hover {
+          color: $cor-secundaria;
+          border-bottom: 2px solid $cor-secundaria;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  @extend %clicavel;
+  background-color: $cor-secundaria;
+  color: antiquewhite;
+  border: none;
+  cursor: pointer;
+
+
+  @include caixa-estilizada(8px, rgba(0, 0, 0, 0.2));
+
+  &:hover {
+    background-color: darken($cor-secundaria, 10%);
+  }
+}

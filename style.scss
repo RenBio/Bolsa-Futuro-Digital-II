@@ -15,11 +15,12 @@ $fonte-padrao: 16px;
   font-weight: bold;
   text-decoration: none;
   padding: 10px 15px;
-  transition: all 0.3 ease;
+  transition: all 0.3s ease;
 }
 
 // Estilos do menu
 .menu {
+  max-width: 500px;
   background-color: $cor-principal;
   padding: 10px;
 
@@ -42,7 +43,7 @@ $fonte-padrao: 16px;
   }
 }
 
-.btn {
+.button {
   @extend %clicavel;
   background-color: $cor-secundaria;
   color: antiquewhite;
